@@ -1,15 +1,16 @@
 package com.api.managers;
 
+import static io.restassured.RestAssured.given;
+
 import io.restassured.response.ValidatableResponse;
 
-import static io.restassured.RestAssured.given;
 
 public class ResourceManager extends SpecificationAbs {
 
   public ValidatableResponse getListSource() {
     return given(spec)
         .when()
-        .get("/unknown/" )
+        .get("/unknown/")
         .then()
         ;
   }

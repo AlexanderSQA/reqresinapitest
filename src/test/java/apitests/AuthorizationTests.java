@@ -1,8 +1,10 @@
 package apitests;
 
+import static org.hamcrest.Matchers.notNullValue;
+
 import com.api.dto.request.AuthDataReq;
-import com.api.dto.response.ErrorResp;
 import com.api.dto.response.AuthSuccessResp;
+import com.api.dto.response.ErrorResp;
 import com.api.managers.ApiModule;
 import com.api.managers.AuthManager;
 import io.restassured.module.jsv.JsonSchemaValidator;
@@ -12,21 +14,16 @@ import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import static org.hamcrest.Matchers.notNullValue;
-import static org.junit.jupiter.api.Assertions.*;
-
 public class AuthorizationTests {
   ApplicationContext context = new AnnotationConfigApplicationContext(ApiModule.class);
-  private AuthManager authManager = context.getBean(AuthManager.class);
-  private final String VALID_EMAIL = "eve.holt@reqres.in";
-  private final String VALID_PASSWORD = "pistol123456";
-
-
+  private final AuthManager authManager = context.getBean(AuthManager.class);
+  private final String validEmail = "eve.holt@reqres.in";
+  private final String validPassword = "pistol123456";
 
   @Test
   @DisplayName("user login - success")
   public void checkUserLogin() {
-    AuthDataReq req = new AuthDataReq(VALID_EMAIL, VALID_PASSWORD);
+    AuthDataReq req = new AuthDataReq(validEmail, validPassword);
 
     AuthSuccessResp resp = authManager.loginUser(req)
         .body("token", notNullValue())
@@ -50,6 +47,7 @@ public class AuthorizationTests {
     Assertions.assertEquals("Missing password", resp.getError());
   }
 
+  /*Failure test for Alure*/
   @Test
   @DisplayName("user login - unsuccessful without email")
   public void checkUserLoginWithoutEmail() {

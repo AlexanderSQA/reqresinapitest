@@ -12,7 +12,7 @@ import org.codehaus.jackson.map.annotate.JsonSerialize;
 @AllArgsConstructor
 @JsonSerialize
 public class SupportResp {
-	private String text;
-	private String url;
+  private String text;
+  private String url;
 
 }

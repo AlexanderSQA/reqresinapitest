@@ -1,5 +1,7 @@
 package apitests;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import com.api.dto.response.ListResourceResp;
 import com.api.dto.response.SingleResourceResp;
 import com.api.managers.ApiModule;
@@ -11,11 +13,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 public class ResourceTests {
   ApplicationContext context = new AnnotationConfigApplicationContext(ApiModule.class);
-  private ResourceManager resourceManager = context.getBean(ResourceManager.class);
+  private final ResourceManager resourceManager = context.getBean(ResourceManager.class);
 
   @Test
   @DisplayName("Get Resource List - success")

@@ -1,12 +1,11 @@
 package com.api.managers;
 
+import static io.restassured.RestAssured.given;
+
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.Locale;
-
-import static io.restassured.RestAssured.given;
 
 public abstract class SpecificationAbs {
   public static final String BASE_URL = System.getProperty("base_url").toLowerCase(Locale.ROOT);

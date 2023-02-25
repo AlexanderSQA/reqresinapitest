@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.19">
+<file name="C:\Users\Adm\IdeaProjects\ReqresIn\src\main\java\com\api\dto\request\AuthDataReq.java">
+</file>
+<file name="C:\Users\Adm\IdeaProjects\ReqresIn\src\main\java\com\api\dto\request\UserCreateReq.java">
+</file>
+<file name="C:\Users\Adm\IdeaProjects\ReqresIn\src\main\java\com\api\dto\response\AuthSuccessResp.java">
+</file>
+<file name="C:\Users\Adm\IdeaProjects\ReqresIn\src\main\java\com\api\dto\response\ErrorResp.java">
+</file>
+<file name="C:\Users\Adm\IdeaProjects\ReqresIn\src\main\java\com\api\dto\response\ListResourceResp.java">
+</file>
+<file name="C:\Users\Adm\IdeaProjects\ReqresIn\src\main\java\com\api\dto\response\ListUserResp.java">
+</file>
+<file name="C:\Users\Adm\IdeaProjects\ReqresIn\src\main\java\com\api\dto\response\ResourceDataResp.java">
+</file>
+<file name="C:\Users\Adm\IdeaProjects\ReqresIn\src\main\java\com\api\dto\response\SingleResourceResp.java">
+</file>
+<file name="C:\Users\Adm\IdeaProjects\ReqresIn\src\main\java\com\api\dto\response\SingleUserResp.java">
+</file>
+<file name="C:\Users\Adm\IdeaProjects\ReqresIn\src\main\java\com\api\dto\response\SupportResp.java">
+</file>
+<file name="C:\Users\Adm\IdeaProjects\ReqresIn\src\main\java\com\api\dto\response\UserCreateResp.java">
+</file>
+<file name="C:\Users\Adm\IdeaProjects\ReqresIn\src\main\java\com\api\dto\response\UserDataResp.java">
+</file>
+<file name="C:\Users\Adm\IdeaProjects\ReqresIn\src\main\java\com\api\dto\response\UserUpdateResp.java">
+</file>
+<file name="C:\Users\Adm\IdeaProjects\ReqresIn\src\main\java\com\api\managers\ApiModule.java">
+</file>
+<file name="C:\Users\Adm\IdeaProjects\ReqresIn\src\main\java\com\api\managers\AuthManager.java">
+</file>
+<file name="C:\Users\Adm\IdeaProjects\ReqresIn\src\main\java\com\api\managers\ResourceManager.java">
+</file>
+<file name="C:\Users\Adm\IdeaProjects\ReqresIn\src\main\java\com\api\managers\SpecificationAbs.java">
+</file>
+<file name="C:\Users\Adm\IdeaProjects\ReqresIn\src\main\java\com\api\managers\UserManager.java">
+</file>
+<file name="C:\Users\Adm\IdeaProjects\ReqresIn\src\test\java\apitests\AuthorizationTests.java">
+</file>
+<file name="C:\Users\Adm\IdeaProjects\ReqresIn\src\test\java\apitests\RegistrationTests.java">
+</file>
+<file name="C:\Users\Adm\IdeaProjects\ReqresIn\src\test\java\apitests\ResourceTests.java">
+</file>
+<file name="C:\Users\Adm\IdeaProjects\ReqresIn\src\test\java\apitests\UserTests.java">
+</file>
+</checkstyle>

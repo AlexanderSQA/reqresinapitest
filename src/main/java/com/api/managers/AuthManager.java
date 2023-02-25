@@ -1,9 +1,10 @@
 package com.api.managers;
 
+import static io.restassured.RestAssured.given;
+
 import com.api.dto.request.AuthDataReq;
 import io.restassured.response.ValidatableResponse;
 
-import static io.restassured.RestAssured.given;
 
 public class AuthManager extends SpecificationAbs {
 

@@ -16,6 +16,6 @@ import org.codehaus.jackson.map.annotate.JsonSerialize;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AuthSuccessResp {
-	private Integer id;
-	private String token;
+  private Integer id;
+  private String token;
 }

@@ -1,5 +1,7 @@
 package apitests;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import com.api.dto.request.UserCreateReq;
 import com.api.dto.response.*;
 import com.api.managers.ApiModule;
@@ -11,21 +13,15 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
 
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.*;
-
-
 public class UserTests {
   ApplicationContext context = new AnnotationConfigApplicationContext(ApiModule.class);
-  private UserManager userManager = context.getBean(UserManager.class);
-
-  private final UserCreateReq USER_BODY = new UserCreateReq("Neo", "Saver");
-  private final UserCreateReq USER_BODY_FOR_UPDATE = new UserCreateReq("Neo", "resident");
+  private final UserManager userManager = context.getBean(UserManager.class);
+  private final UserCreateReq userBody = new UserCreateReq("Neo", "Saver");
+  private final UserCreateReq userBodyForUpdate = new UserCreateReq("Neo", "resident");
 
   @Test
   @DisplayName("Get Users List")
@@ -96,14 +92,14 @@ public class UserTests {
   @Test
   @DisplayName("Create new user - success")
   public void createNewUser() {
-    UserCreateResp resp = userManager.createNewUser(USER_BODY)
+    UserCreateResp resp = userManager.createNewUser(userBody)
         .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schemas/CreateUser.json"))
         .log().all().assertThat().statusCode(201)
         .extract().as(UserCreateResp.class);
 
     assertAll(
-        () -> assertEquals(USER_BODY.getName(), resp.getName()),
-        () -> assertEquals(USER_BODY.getJob(), resp.getJob()),
+        () -> assertEquals(userBody.getName(), resp.getName()),
+        () -> assertEquals(userBody.getJob(), resp.getJob()),
         () -> assertFalse(resp.getId().isEmpty()),
         () -> assertFalse(resp.getCreatedAt().isEmpty())
     );
@@ -113,14 +109,14 @@ public class UserTests {
   @DisplayName("Update user by put - success")
   public void updateUserByPut() {
     int userId = 2;
-    UserUpdateResp resp = userManager.updateUser(userId, USER_BODY_FOR_UPDATE)
+    UserUpdateResp resp = userManager.updateUser(userId, userBodyForUpdate)
         .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schemas/UpdateUser.json"))
         .log().all().assertThat().statusCode(200)
         .extract().as(UserUpdateResp.class);
 
     assertAll(
-        () -> assertEquals(USER_BODY_FOR_UPDATE.getName(), resp.getName()),
-        () -> assertEquals(USER_BODY_FOR_UPDATE.getJob(), resp.getJob()),
+        () -> assertEquals(userBodyForUpdate.getName(), resp.getName()),
+        () -> assertEquals(userBodyForUpdate.getJob(), resp.getJob()),
         () -> assertFalse(resp.getUpdatedAt().isEmpty())
     );
   }

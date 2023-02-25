@@ -1,5 +1,8 @@
 package apitests;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import com.api.dto.request.AuthDataReq;
 import com.api.dto.response.AuthSuccessResp;
 import com.api.dto.response.ErrorResp;
@@ -12,19 +15,16 @@ import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
 public class RegistrationTests {
   ApplicationContext context = new AnnotationConfigApplicationContext(ApiModule.class);
-  private AuthManager authManager = context.getBean(AuthManager.class);
-  private final String VALID_EMAIL = "eve.holt@reqres.in";
-  private final String VALID_PASSWORD = "pistol123456";
+  private final AuthManager authManager = context.getBean(AuthManager.class);
+  private final String validEmail = "eve.holt@reqres.in";
+  private final String validPassword = "pistol123456";
 
   @Test
   @DisplayName("user registration - success")
   public void checkSuccessRegisterUser() {
-    AuthDataReq req = new AuthDataReq(VALID_EMAIL, VALID_PASSWORD);
+    AuthDataReq req = new AuthDataReq(validEmail, validPassword);
 
     AuthSuccessResp resp = authManager.registerUser(req)
         .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schemas/RegisterUser.json"))
