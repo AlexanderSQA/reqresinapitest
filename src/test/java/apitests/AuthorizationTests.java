@@ -47,7 +47,7 @@ public class AuthorizationTests {
     Assertions.assertEquals("Missing password", resp.getError());
   }
 
-  /*Failure test for Alure*/
+  /*Failure test for Allure*/
   @Test
   @DisplayName("user login - unsuccessful without email")
   public void checkUserLoginWithoutEmail() {
