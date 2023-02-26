@@ -1,4 +1,6 @@
 /target/
+.allure
+allure-results
 /.idea
 logs.log
 .iml
